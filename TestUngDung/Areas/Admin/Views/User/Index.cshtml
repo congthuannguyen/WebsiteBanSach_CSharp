@@ -1,0 +1,136 @@
+﻿@*@model IEnumerable<ModelEF.Model.UserAccount>*@
+
+@model PagedList.IPagedList<ModelEF.Model.UserAccount>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Người Dùng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    @*<i class="fas fa-users" style="color: purple;">&nbsp;Quản Lý Người Dùng</i>*@
+}
+<p> @Html.Partial("_Notifications") </p> @*In ra thông báo ko tìm thấy *@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        td {
+            color: black;
+            text-align: center;
+        }
+        #nz-div-4 h3.tde :after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-left: 20px solid #EA3A3C;
+            border-bottom: 0px solid transparent;
+            border-right: 0 solid transparent;
+            position: absolute;
+            top: 0px;
+            right: -20px;
+        }
+
+
+        #nz-div-4 h3.tde :before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 40px 20px 0px 0px;
+            border-style: solid;
+            border-color: transparent;
+            border-right-color: #EA3A3C;
+            position: absolute;
+            top: 0px;
+            left: -20px;
+        }
+
+        #nz-div-4 h3.tde span {
+            background: #EA3A3C;
+            padding: 10px 20px 8px 20px;
+            color: white;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+        }
+
+        #nz-div-4 h3.tde {
+            text-align: center;
+            margin: 20px 0;
+            border-bottom: 2px solid #ea3a3c;
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id='nz-div-4'>
+        <h3 class="tde">
+            <span style="font-weight: bold;">QUẢN LÝ NGƯỜI DÙNG</span>
+        </h3>
+    </div>
+
+
+    @*--------------------------- Tìm Kiếm*@
+    @using (Html.BeginForm("Index", "User", FormMethod.Post))
+    {
+        <div class="col-lg-12 form-check form-group">
+            <div class="col-md-8" style="float:left;">
+                <input autocomplete="off" type="text" name="searchName" placeholder="Nhập User Name cần tìm kiếm ..." class="form-control" />
+            </div>
+            <div class="col-md-4" style="float:left;">
+                <input type="submit" value="Tìm Kiếm" class="btn btn-info" />
+            </div>
+        </div>
+    }
+    <br />
+    <br />
+    @*---------------------------*@
+
+    <div class="container-fluid">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh Sách Người Dùng</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr style="background: rgb(8, 27, 133); color: white; text-align: center;">
+                            <th>ID</th>
+                            <th>User Name</th>
+                            <th>Mật Khẩu</th>
+                            <th>Trạng Thái</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.UserName</td>
+                                <td>@item.Password</td>
+                                <td>@item.Status</td>
+                                <td>
+                                    @if (item.Status.Trim().Equals("Blocked"))
+                                    {
+                                        <button class="btn btn-warning"><i class="far fa-trash-alt"></i>&nbsp; @Html.ActionLink("Xóa", "Delete", new { id = item.ID })</button>
+                                    }
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }))
+            </div>
+        </div>
+    </div>
+</body>
+</html>

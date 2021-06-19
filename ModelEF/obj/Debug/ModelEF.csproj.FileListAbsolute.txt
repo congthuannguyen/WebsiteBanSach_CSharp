@@ -1,0 +1,16 @@
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\ModelEF.dll.config
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\ModelEF.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\ModelEF.pdb
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\EntityFramework.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\EntityFramework.SqlServer.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\EntityFramework.xml
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\EntityFramework.SqlServer.xml
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\obj\Debug\ModelEF.csprojAssemblyReference.cache
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\obj\Debug\ModelEF.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\obj\Debug\ModelEF.csproj.CopyComplete
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\obj\Debug\ModelEF.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\obj\Debug\ModelEF.pdb
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\PagedList.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\PagedList.Mvc.dll
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\PagedList.xml
+D:\VisualStudio\Visual C#\NguyenCongThuan\ModelEF\bin\Debug\PagedList.Mvc.xml

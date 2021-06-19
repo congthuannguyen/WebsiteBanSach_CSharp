@@ -1,0 +1,361 @@
+﻿
+@model IEnumerable<ModelEF.Model.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CongThuan BookStore</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Assets/Clients/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Assets/Clients/css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="~/Assets/Clients/img/icon/search.png" alt=""></a>
+            <a href="#"><img src="~/Assets/Clients/img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="~/Assets/Clients/img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <h5 style="color: green; font-weight: bold;">CongThuan BooksStore</h5>
+                        @*<a href="./index.html"><img src="~/Assets/Clients/img/logo.png" alt=""></a>*@
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class="active">
+                                <a href="./index.html">Trang Chủ</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Trang Admin</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./shop.html">Danh Mục</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Sách bán chạy</a></li>
+                                    <li><a href="#">Sách mới ra mắt</a></li>
+                                    <li><a href="#">Sách kinh tế</a></li>
+                                    <li><a href="#">Sách Thiếu nhi</a></li>
+                                    <li><a href="#">Sách Kỹ Năng Sống</a></li>
+                                    <li><a href="#">Học ngoại ngữ</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Sản Phẩm</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Tiêu biểu</a></li>
+                                    <li><a href="#">Xem nhiều nhất</a></li>
+                                    <li><a href="#">Mua nhiều nhất</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="./contact.html">Liên Hệ</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Email: congThuan701</a></li>
+                                    <li><a href="#">Điện thoại: 0782019606</a></li>
+                                    <li><a href="#">Facebook: Nguyen Cong Thuan</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="~/Assets/Clients/img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="~/Assets/Clients/img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="~/Assets/Clients/img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price">$0.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="~/Assets/Clients/img/hero/hero-1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Sách Có Lược Xem Nhiều Nhất</h6>
+                                <h2>Tony Buổi Sáng</h2>
+                                <h4 style="color: blue;">"Từ những chuyện nhỏ nhặt đời thường"</h4>
+                                <br />
+                                <p>
+                                    <img src="~/Assets/Clients/img/tony.jpg" alt="" />
+                                </p>
+                                <a href="#" class="primary-btn">Mua Ngay <span class="arrow_right"></span></a>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-5 col-md-4">
+                            <img src="~/Assets/Clients/img/docSach.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="~/Assets/Clients/img/damNghiLon.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Sách Hay Nên Đọc</h6>
+                                <h2>Dám Nghĩ Lớn</h2>
+                                <h4 style="color: blue;">"Sự sáng tạo và suy nghĩ tư duy mới mẻ và cần thiết để dám nghĩ lớn và dám hành động lớn"</h4>
+                                <br />
+                                <p>
+                                    <img src="~/Assets/Clients/img/damNghiLon.jpg" alt="" />
+                                </p>
+                                <a href="#" class="primary-btn">Mua Ngay <span class="arrow_right"></span></a>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-5 col-md-4">
+                            <img src="~/Assets/Clients/img/quaySach.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="~/Assets/Clients/img/damNghiLon.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Sách Mua Nhiều Nhất</h6>
+                                <h2>Hoàng Tử Bé</h2>
+                                <h4 style="color: blue;">“Hãy nhìn thế giới lại một lần nữa”</h4>
+                                <br />
+                                <p>
+                                    <img src="~/Assets/Clients/img/hoangTuBe.jpg" alt="" />
+                                </p>
+                                <a href="#" class="primary-btn">Mua Ngay <span class="arrow_right"></span></a>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-5 col-md-4">
+                            <img src="~/Assets/Clients/img/docSach2.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <!-- Hero Section End -->
+    <!-- Banner Section Begin -->
+    <section class="banner spad">
+        <div class="container">
+
+        </div>
+    </section>
+    <!-- Banner Section End -->
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="filter__controls">
+                        <li class="active" data-filter="*" style="color: orangered;">Tất Cả Sách</li>
+                        <li data-filter=".new-arrivals">Sách Mới</li>
+                        <li data-filter=".hot-sales">Sách Giảm Giá</li>
+                    </ul>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                @*<div class="row product__filter">*@
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="product__item" style="text-align: center;">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                            <img src="@Url.Content(item.Image)" style="height:200px; width:200px; margin:20px;" />
+                            <span class="label" style="color: white; background-color: orangered;">New</span>
+                            <ul class="product__hover">
+                                <li><a href="#"><img src="~/Assets/Clients/img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#"><img src="~/Assets/Clients/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                <li><a href="#"><img src="~/Assets/Clients/img/icon/search.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text" style="text-align: center;">
+                            <h6> @Html.DisplayFor(modelItem => item.Name)</h6>
+                            <a href="#" class="add-cart">+ Thêm Vào Giỏ Hàng</a>
+                            <p>Số Lượng Còn: @Html.DisplayFor(modelItem => item.Quantity)</p>
+                            <div class="rating">
+                                <i class="fa fa-star" style="color: orange"></i>
+                                <i class="fa fa-star" style="color: orange"></i>
+                                <i class="fa fa-star" style="color: orange"></i>
+                                <i class="fa fa-star" style="color: orange"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <h5> @Html.DisplayFor(modelItem => item.UnitCost)</h5>
+                            <div class="product__color__select">
+                                <label for="pc-1">
+                                    <input type="radio" id="pc-1">
+                                </label>
+                                <label class="active black" for="pc-2">
+                                    <input type="radio" id="pc-2">
+                                </label>
+                                <label class="grey" for="pc-3">
+                                    <input type="radio" id="pc-3">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @*</div>*@
+            }
+        </div>
+    </section>
+    <!-- Product Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><h4 style="font-weight: bold; color: green;">CongThuan BookStore</h4></a>
+                        </div>
+                        <p>Khách hàng là trọng tâm của mô hình kinh doanh độc đáo của chúng tôi, bao gồm cả thiết kế.</p>
+                        <a href="#"><img src="~/Assets/Clients/img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Liên Lạc</h6>
+                        <ul>
+                            <li><a href="#">SĐT: 0782019606</a></li>
+                            <li><a href="#">Facebook: Cong Thuan</a></li>
+                            <li><a href="#">Công Ty</a></li>
+                            <li><a href="#">Nhà Ở</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Về BookStore</h6>
+                        <ul>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Tuyển Dụng</a></li>
+                            <li><a href="#">Điều Khoản Hợp Đồng</a></li>
+                            <li><a href="#">Chính Sách Bảo Mật</a></li>
+                            <li><a href="#">Flash Sales</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Địa Chỉ</h6>
+                        <div class="footer__newslatter">
+                            <p>Điện An - Điện Bàn - Quảng Nam</p>
+                            <form action="#">
+                                <input type="text" placeholder="Phản hồi cho chúng tôi ...">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>
+                            Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>. Downloaded from <a href="https://themeslab.org/" target="_blank">Themeslab</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+    <!-- Js Plugins -->
+    <script src="~/Assets/Clients/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Assets/Clients/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Clients/js/jquery.nice-select.min.js"></script>
+    <script src="~/Assets/Clients/js/jquery.nicescroll.min.js"></script>
+    <script src="~/Assets/Clients/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Assets/Clients/js/jquery.countdown.min.js"></script>
+    <script src="~/Assets/Clients/js/jquery.slicknav.js"></script>
+    <script src="~/Assets/Clients/js/mixitup.min.js"></script>
+    <script src="~/Assets/Clients/js/owl.carousel.min.js"></script>
+    <script src="~/Assets/Clients/js/main.js"></script>
+</body>
+
+</html>
+
+

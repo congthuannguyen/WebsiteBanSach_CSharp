@@ -1,0 +1,133 @@
+﻿@model IEnumerable<ModelEF.Model.Product>
+
+@{
+    ViewBag.Title = "Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section header{
+    @*<i class="fas fa-book-reader" style="color: purple;">&nbsp;Danh Sách Sản Phẩm</i>*@
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        td{
+            color: black;
+            text-align: center;
+        }
+        #nz-div-4 h3.tde :after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-left: 20px solid #EA3A3C;
+            border-bottom: 0px solid transparent;
+            border-right: 0 solid transparent;
+            position: absolute;
+            top: 0px;
+            right: -20px;
+        }
+
+
+        #nz-div-4 h3.tde :before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 40px 20px 0px 0px;
+            border-style: solid;
+            border-color: transparent;
+            border-right-color: #EA3A3C;
+            position: absolute;
+            top: 0px;
+            left: -20px;
+        }
+
+        #nz-div-4 h3.tde span {
+            background: #EA3A3C;
+            padding: 10px 20px 8px 20px;
+            color: white;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+        }
+
+        #nz-div-4 h3.tde {
+            text-align: center;
+            margin: 20px 0;
+            border-bottom: 2px solid #ea3a3c;
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id='nz-div-4'>
+        <h3 class="tde">
+            <span style="font-weight: bold;">DANH SÁCH SẢN PHẨM</span>
+        </h3>
+    </div>
+
+    <p>
+        @Html.ActionLink("Thêm Sản Phẩm", "Create", "Products", new { @class = "btn btn-success" })
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tr style="background: rgb(8, 27, 133); color: white; text-align: center;">
+                <th>
+                    STT
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDCategoryNo)
+                </th>
+                <th>Thao Tác</th>
+            </tr>
+            @{ var i = 1;}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @i
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDCategoryNo)
+                    </td>
+                    <td>
+                        <button class="btn btn-warning"><i class="fas fa-info-circle"></i>&nbsp;@Html.ActionLink("Chi Tiết", "Details", new { id = item.ID })</button>
+                    </td>
+                </tr>
+                i++;
+            }
+
+        </table>
+    </div>
+</body>
+</html>
